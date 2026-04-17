@@ -69,6 +69,29 @@ docker compose up --build
 - API: http://localhost:8000  
 - Docs: http://localhost:8000/docs  
 
+## Frontend Dashboard (Next.js)
+
+A styled frontend is available in `frontend/` with:
+
+- dashboard stats
+- application list + detail view
+- search and status filtering
+- create application form
+- status updates
+- generate-notes action with task polling
+- copy recruiter message action
+
+Run it locally:
+
+```powershell
+cd frontend
+copy .env.example .env.local
+npm install
+npm run dev
+```
+
+Then open `http://localhost:3000`.
+
 ## Example requests
 
 **Create application**

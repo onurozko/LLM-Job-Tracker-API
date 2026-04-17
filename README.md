@@ -4,75 +4,80 @@ AI-powered job application tracker with automated note generation.
 
 Track job applications, monitor pipeline status, and generate tailored insights like "Why I Fit", recruiter messages, and interview checklists using LLMs.
 
+---
+
 ## Features
-- Track job applications with status such as applied, interviewing, and offer
-- Dashboard with application pipeline stats
+
+- Track job applications with status (applied, interviewing, offer)
+- Dashboard with pipeline stats
 - Search and filter applications
 - Detailed application view
-- AI-generated Why I Fit bullets
-- AI-generated recruiter message
-- AI-generated interview checklist
-- Background note generation with Celery and Redis
-- Local LLM support through Ollama
+- AI-generated:
+  - Why I Fit
+  - Recruiter message
+  - Interview checklist
+- Background processing with Celery + Redis
+- Local LLM support via Ollama
+
+---
 
 ## Tech Stack
+
 - Backend: FastAPI, Python
 - Database: MongoDB
 - Async Tasks: Celery, Redis
 - Frontend: Next.js, TypeScript, TailwindCSS
 - AI: Ollama, LLM
 
+---
+
 ## Screenshots
 
 ### Dashboard Overview
-A clean overview of applications, statuses, and pipeline health.
 
-![Dashboard](./screenshots/dashboard.png)
+<p align="center">
+  <img src="./screenshots/dashboard.png" width="900" alt="Dashboard overview">
+</p>
 
-### Notes Generation Before
-Example application detail view before generating AI notes.
+### Notes Generation (Before)
 
-![Before Generation](./screenshots/pre-generation.png)
+<p align="center">
+  <img src="./screenshots/pre-generation.png" width="900" alt="Application detail before generating notes">
+</p>
 
-### Notes Generation After
-Example application detail view after generating AI notes.
+### Notes Generation (After)
 
-![After Generation](./screenshots/generated.png)
+<p align="center">
+  <img src="./screenshots/generated.png" width="900" alt="Application detail after generating notes">
+</p>
+
+---
 
 ## Architecture
+
 Frontend (Next.js) -> FastAPI -> MongoDB  
-FastAPI -> Celery + Redis -> Ollama
+FastAPI -> Celery + Redis -> Ollama (LLM)
+
+---
 
 ## Running Locally
 
 ### 1. Clone the repository
+
 ```bash
 git clone https://github.com/onurozko/LLM-Job-Tracker-API.git
 cd LLM-Job-Tracker-API
 ```
 
-### 2. Configure environment
-```powershell
-copy .env.example .env
-```
+### 2. Start services
 
-### 3. Start backend services
-```powershell
+```bash
 docker compose up --build
 ```
 
-### 4. Run frontend
-```powershell
-cd frontend
-copy .env.example .env.local
-npm install
-npm run dev
-```
+### 3. Access
 
-Open `http://localhost:3000`.
+- **Frontend:** http://localhost:3000
+- **API docs:** http://localhost:8000/docs
 
-## Future Improvements
-- Add authentication and user-specific application tracking
-- Add analytics charts and pipeline trend insights
-- Add deploy setup (Docker registry + cloud deployment)
-- Add export/share features for generated notes
+From `frontend/`, run `npm install` then `npm run dev` (use `frontend/.env.example` as `frontend/.env.local`). Copy root `.env.example` to `.env` before Docker; set `CORS_ORIGINS=http://localhost:3000` for the dashboard.

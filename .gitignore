@@ -31,3 +31,7 @@ htmlcov/
 dist/
 build/
 *.log
+
+# Frontend
+frontend/node_modules/
+frontend/.next/

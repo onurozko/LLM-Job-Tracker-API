@@ -36,19 +36,19 @@ Track job applications, monitor pipeline status, and generate tailored insights 
 ### Dashboard Overview
 
 <p align="center">
-  <img src="./screenshots/dashboard.png" width="900" alt="Dashboard overview">
+  <img src="./screenshots/dashboard.png" alt="Dashboard overview">
 </p>
 
 ### Notes Generation (Before)
 
 <p align="center">
-  <img src="./screenshots/pre-generation.png" width="900" alt="Application detail before generating notes">
+  <img src="./screenshots/pre-generation.png" alt="Application detail before generating notes">
 </p>
 
 ### Notes Generation (After)
 
 <p align="center">
-  <img src="./screenshots/generated.png" width="900" alt="Application detail after generating notes">
+  <img src="./screenshots/generated.png" alt="Application detail after generating notes">
 </p>
 
 ---
